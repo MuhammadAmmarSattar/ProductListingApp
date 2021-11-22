@@ -1,0 +1,163 @@
+//apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-kapt '
+//apply plugin: 'dagger.hilt.android.plugin'
+//apply plugin: 'kotlin-parcelize'
+//apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+//    id 'dagger.hilt.android.plugin'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+def config = rootProject.extensions.getByName("ext")
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.myappproject"
+        minSdk 26
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+//    implementation 'androidx.core:core-ktx:1.7.0'
+//    implementation 'androidx.appcompat:appcompat:1.3.1'
+//    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    implementation config.commonDependency.ktx_core
+    implementation config.commonDependency.multidex
+    implementation config.commonDependency.appcompat
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    debugImplementation 'androidx.fragment:fragment-testing:1.3.6'
+    //Databinding Compiler
+    kapt  config.commonDependency.dataBinding
+    //RetroFit Networking
+    implementation config.retrofitDependency.retrofit2
+    implementation config.retrofitDependency.loggingInterceptor
+    implementation config.retrofitDependency.retrofitGsonConvertor
+    implementation config.retrofitDependency.retrofit2AdatperRxJava
+
+    implementation config.commonDependency.gson
+    // rx java
+    implementation config.reactive_extension.rxJava2
+    // testing
+    implementation config.testing.junit
+    implementation config.testing.junitExtension
+    implementation config.testing.espresso
+    implementation config.testing.mockito
+    testImplementation config.testing.mockitoTestImplementation
+    androidTestImplementation config.testing.mockitoAndroidTestImplementation
+    // material design
+    implementation config.ui_design.materialDesign
+    //Complex RecyclerViews
+    implementation config.ui_design.complexRv
+    //viewPager_2
+    implementation config.ui_design.viewPager2
+    //ConstraintLayout
+    implementation config.ui_design.constraintLayout
+    // room
+    implementation config.database.room
+    kapt  config.database.roomAnnotation
+    implementation config.database.roomCoroutines
+    // Android Architecture Component.
+    implementation config.androidArchitectureComponents.lifeCycleExtension
+    implementation config.androidArchitectureComponents.lifeCycleLiveData
+    implementation config.androidArchitectureComponents.lifeCycleRuntime
+    implementation config.androidArchitectureComponents.lifeCycleRuntimeKtx
+    implementation config.androidArchitectureComponents.lifecyleViewModel
+    // Coroutines
+    implementation config.backgroundAndAsynThreading.coroutines
+    //Work Manager
+    implementation config.backgroundAndAsynThreading.workManager
+    // Navigation Component
+    implementation config.navigationDependency.navFragment
+    implementation config.navigationDependency.navKtx
+    // Glide
+    implementation config.image_processing.glide
+    kapt  config.image_processing.glideCompiler
+    // Activity KTX for viewModels()
+    implementation config.commonDependency.activityKtx
+    //Dagger - Hilt
+    implementation config.di.hilt
+    kapt  config.di.hiltDagger
+    // Timber
+    implementation config.logs.timber
+    //DataStore Preferences
+    implementation config.commonDependency.dataStorePref
+    //For Event Management
+    api config.commonDependency.otto
+    //For Lottie
+    implementation config.ui_design.lottieViews
+    //QuickPermissions for runtime permissiona
+//    implementation config.ui_design.quickPermission
+    //Localization Library
+    implementation config.ui_design.localization
+    //for text size
+    implementation config.ui_design.ssp
+    //for screen size
+    implementation config.ui_design.sdp
+
+    implementation config.ui_design.circleimageview
+    //paging3
+    implementation config.paging3.pagingRuntime
+    implementation config.paging3.pagingRuntimeKtx
+    //animation
+    implementation config.ui_design.androidAnimations
+
+//    implementation config.ui_design.photoView
+    implementation 'me.relex:circleindicator:2.1.6'
+//    testImplementation 'junit:junit:4.12'
+//    testImplementation "org.mockito:mockito-core:3.3.3"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.4'
+    implementation 'com.rishabhharit.roundedimageview:RoundedImageView:0.8.4'
+
+    // For instrumented tests.
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    // ...with Kotlin.
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+    // ...with Java.
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.38.1'
+}
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_90sdp"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardBackgroundColor="#F1F4FD"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginBottom="@dimen/_4sdp"
+    android:elevation="5dp"
+    app:cardElevation="5dp"
+    app:cardMaxElevation="5dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/product_detail_item_place_holder"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.34" />
+
+        <com.example.myappproject.ui.component.customTextView.CustomTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Title:"
+            app:textFont="regular"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            />
+
+        <com.example.myappproject.ui.component.customTextView.CustomTextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            app:textFont="regular"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+           />
+
+        <com.example.myappproject.ui.component.customTextView.CustomTextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SubTitle:"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:textFont="regular"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+           />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyAppProject</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_msg">Are you sure you want to close application?</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="alert">Alert</string>
+
+    <string name="product_listing">Product Listing</string>
+    <string name="detail">Detail</string>
+    <string name="no_data_fount">No Data Found</string>
+
+</resources>

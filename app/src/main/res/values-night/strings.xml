@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product_listing">Product Listing</string>
+    <string name="detail">Detail</string>
+    <string name="no_data_fount">No Data Fount</string>
+</resources>
