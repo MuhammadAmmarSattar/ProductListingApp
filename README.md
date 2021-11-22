@@ -16,14 +16,17 @@ Product Listing Fragment and Product Detail Fragment.
 .Livedata for notify to view.
 .Unit test 
 .UI test.
+.Glide for loading photos.
+.Collecting data from kotlin Flow.
 
 Architecture
 .MVVM
 .Hilt for dependancy Injection.
-.Repository Pattern DTOs , Mappers RDS and LDS.
+.Using Repository Pattern DTO , Mapper RDS(Remote Data Source) and LDS(Local Data Source).
 .Navigation Library.
 .Handle Internet connection with the help of Observer.
 
 Gradle 
 . Maintain Gradle libraries versions.
+
 
